@@ -5,332 +5,332 @@ author:
   name: Evolane - Ynias
 
 metrics:
-#   - key: com.dynatrace.extension.prometheus-sag.api.exec_error_count
-#     metadata:
-#       displayName: SAG - API-Level - Exec Error Count
-#       description: Counts the number of API invocations that fail due to an unexpected error. This does not include policy violations and backend failures.
-#       unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.api.exec_error_count
+    metadata:
+      displayName: SAG - API-Level - Exec Error Count
+      description: Counts the number of API invocations that fail due to an unexpected error. This does not include policy violations and backend failures.
+      unit: Count
   - key: com.dynatrace.extension.prometheus-sag.api.backend_error_count
     metadata:
       displayName: SAG - API-Level - Backend Error Count
       description: Counts the number of backend service failures during API invocations with a response code greater or equal to 300 and classifies the failures by its response code with the label 3xx, 4xx, 5xx or connect. The connect reason means that the backend service cannot be reached, for example, due to network outages.
       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.api.tx_error_count
-#     metadata:
-#       displayName: SAG - API-Level - TX Error Count
-#       description: Counts the number of API invocations with a response code greater or equal to 300 and classifies the invocations by its response code with the label 3xx, 4xx or 5xx.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.api.avg_latency
-#     metadata:
-#       displayName: SAG - API-Level - Average Latency
-#       description: Measures the average time spent by the API invocations, which does not include the time spent in backend services, classified by its response code with the label 2xx, 3xx, 4xx or 5xx.
-#       unit: MilliSecond
-#   - key: com.dynatrace.extension.prometheus-sag.api.avg_backend_response_time
-#     metadata:
-#       displayName: SAG - API-Level - Average backend response time
-#       description: Measures the average time spent by the backend services while performing an API invocation request, classified by its response code with the label 2xx, 3xx, 4xx, 5xx or connect.
-#       unit: MilliSecond
-#   - key: com.dynatrace.extension.prometheus-sag.api.avg_response_time
-#     metadata:
-#       displayName: SAG - API-Level - Average Response Time
-#       description: Measures the average time spent by the API invocations, classified by its response code with the label 2xx, 3xx, 4xx or 5xx. This includes the time spent in API Gateway and by the backend service.
-#       unit: MilliSecond
-#   - key: com.dynatrace.extension.prometheus-sag.api.apicalls_total_count
-#     metadata:
-#       displayName: SAG - API-Level - Total calls
-#       description: The total number of API invocations per HTTP response code.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.server.tx_error_count
-#     metadata:
-#       displayName: SAG - Server-Level - TX Error Count
-#       description: Counts the number of API invocations with a response code greater or equal to 300 and classifies the invocations by its response code with the label 3xx, 4xx or 5xx.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.server.backend_error_count
-#     metadata:
-#       displayName: SAG - Server-Level - Backend Error Count
-#       description: Counts the number of backend service failures during API invocations with a response code greater or equal to 300 and classifies the failures by its response code with the label 3xx, 4xx, 5xx or connect. The connect reason means that the backend service cannot be reached, for example, due to network outages.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.server.component_error_count
-#     metadata:
-#       displayName: SAG - Server-Level - Component Error Count
-#       description: Counts the number of exceptions that occur when interacting with components or destinations.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.server.exec_error_count
-#     metadata:
-#       displayName: SAG - Server-Level - Exec Error Count
-#       description: Counts the number of API invocations that fail due to an unexpected error (for example NPE) and provides an aggregated number.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.server.avg_response_time
-#     metadata:
-#       displayName: SAG - Server-Level - Average Response Time
-#       description: Measures the average time spent by all API invocations, classified by its response code with the label 2xx, 3xx, 4xx or 5xx. This includes the time spent in API Gateway and by the backend services
-#       unit: MilliSecond
-#   - key: com.dynatrace.extension.prometheus-sag.server.avg_latency
-#     metadata:
-#       displayName: SAG - Server-Level - Average Latency
-#       description: Measures the average time spent by all API invocations, which does not include the time spent in backend services, classified by its response code with the label 2xx, 3xx, 4xx or 5xx.
-#       unit: MilliSecond
-#   - key: com.dynatrace.extension.prometheus-sag.api.apicalls_total
-#     metadata:
-#       displayName: SAG - Host-Level - Adapter Count
-#       description: The number of adapter packages loaded on Microservices Runtime
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.average_connection_time
-#     metadata:
-#       displayName: SAG - Host-Level - Average Connection Time
-#       description: The running average for the connection time expressed in milliseconds. This can also be described as the average session time or how long a connection is kept alive.
-#       unit: MilliSecond
-#   - key: com.dynatrace.extension.prometheus-sag.host.avg_time_per_http_requests
-#     metadata:
-#       displayName: SAG - Host-Level - Average HTTP runtime
-#       description: The running average time for all HTTP/S requests measured in milliseconds, This metric excludes requests for services in packages listed in the watt.server.stats.packages.exclude parameter.
-#       unit: MilliSecond
-#   - key: com.dynatrace.extension.prometheus-sag.host.cloudstream
-#     metadata:
-#       displayName: SAG - Host-Level - Cloudstream Count
-#       description: The number of loaded CloudStreams connectors on Microservices Runtime.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.current_stateful_sessions
-#     metadata:
-#       displayName: SAG - Host-Level - Current Stateful Sessions
-#       description: The current number of stateful sessions.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.custom_package
-#     metadata:
-#       displayName: SAG - Host-Level - Custom Package Count
-#       description: The number of custom packages loaded on Microservices Runtime. A package is considered a custom package if the package manifest contains system_package=no.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.free_memory_bytes
-#     metadata:
-#       displayName: SAG - Host-Level - Free Memory Bytes
-#       description: The total free memory for the Microservices Runtime JVM.
-#       unit: Byte
-#   - key: com.dynatrace.extension.prometheus-sag.host.http_requests
-#     metadata:
-#       displayName: SAG - Host-Level - Http Requests
-#       description: The total number of HTTP/S requests since the last statistics poll. The statistics poll interval is controlled by the watt.server.stats.pollTime server configuration parameter. The default interval is 60 seconds. This metric excludes requests for services in packages listed in the watt.server.stats.packages.exclude parameter.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.max_connections_count
-#     metadata:
-#       displayName: SAG - Host-Level - Max Connections
-#       description: The peak number of connections to Microservices Runtime the connection is a session which can be created multiple ways such as through an HTTP connection, a trigger, the scheduler, etc.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.max_memory_bytes_count
-#     metadata:
-#       displayName: SAG - Host-Level - Max Memory Bytes
-#       description: TThe maximum memory of the Microservices Runtime JVM.
-#       unit: Byte
-#   - key: com.dynatrace.extension.prometheus-sag.host.max_number_sessions_allowed
-#     metadata:
-#       displayName: SAG - Host-Level - Max Sessions Allowed
-#       description: The maximum number of sessions allowed at one time as determined by the license.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.max_services_count
-#     metadata:
-#       displayName: SAG - Host-Level - Max Services
-#       description: The maximum number of services that have run concurrently on the server excluding services in a package set in the watt.sever.stats.packages.exclude parameter.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.max_system_threads_count
-#     metadata:
-#       displayName: SAG - Host-Level - Max system Threads
-#       description: The peak number of system threads used by Microservices Runtime since startup.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.number_current_connections
-#     metadata:
-#       displayName: SAG - Host-Level - Current Connections
-#       description: The number of current connections to the Microservices Runtime where the connection is a session which can be created multiple ways such as through an HTTP connection, a trigger, the scheduler, etc.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.number_nonservice_errors_count
-#     metadata:
-#       displayName: SAG - Host-Level - Nonservice Errors
-#       description: The number of errors that were caused by exceptions that are not ServiceExceptions. This is the same value returned by sag_is_number_unknown_errors.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.number_service_errors_count
-#     metadata:
-#       displayName: SAG - Host-Level - Service Errors
-#       description: The number of service errors since startup, which includes any service that gets an exception of any kind.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.number_service_errors_excluding_internal_svc_per_minute
-#     metadata:
-#       displayName: SAG - Host-Level - Number of service errors in the last minute with excludes
-#       description: The number of service errors in the last minute, which includes any service that gets an exception of any kind but excludes any services in a package set in the watt.sever.stats.packages.exclude server configuration parameter.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.number_service_errors_per_minute
-#     metadata:
-#       displayName: SAG - Host-Level - Number of service errors in the last minute 
-#       description: The number of service errors in the last minute.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.number_service_invokes_count
-#     metadata:
-#       displayName: SAG - Host-Level - Number of Successful service invokes
-#       description: The number of successful service invokes and service errors since Microservices Runtime startup. This metric excludes services in a package set in the watt.sever.stats.packages.exclude parameter.
-#       unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.api.tx_error_count
+    metadata:
+      displayName: SAG - API-Level - TX Error Count
+      description: Counts the number of API invocations with a response code greater or equal to 300 and classifies the invocations by its response code with the label 3xx, 4xx or 5xx.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.api.avg_latency
+    metadata:
+      displayName: SAG - API-Level - Average Latency
+      description: Measures the average time spent by the API invocations, which does not include the time spent in backend services, classified by its response code with the label 2xx, 3xx, 4xx or 5xx.
+      unit: MilliSecond
+  - key: com.dynatrace.extension.prometheus-sag.api.avg_backend_response_time
+    metadata:
+      displayName: SAG - API-Level - Average backend response time
+      description: Measures the average time spent by the backend services while performing an API invocation request, classified by its response code with the label 2xx, 3xx, 4xx, 5xx or connect.
+      unit: MilliSecond
+  - key: com.dynatrace.extension.prometheus-sag.api.avg_response_time
+    metadata:
+      displayName: SAG - API-Level - Average Response Time
+      description: Measures the average time spent by the API invocations, classified by its response code with the label 2xx, 3xx, 4xx or 5xx. This includes the time spent in API Gateway and by the backend service.
+      unit: MilliSecond
+  - key: com.dynatrace.extension.prometheus-sag.api.apicalls_total_count
+    metadata:
+      displayName: SAG - API-Level - Total calls
+      description: The total number of API invocations per HTTP response code.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.server.tx_error_count
+    metadata:
+      displayName: SAG - Server-Level - TX Error Count
+      description: Counts the number of API invocations with a response code greater or equal to 300 and classifies the invocations by its response code with the label 3xx, 4xx or 5xx.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.server.backend_error_count
+    metadata:
+      displayName: SAG - Server-Level - Backend Error Count
+      description: Counts the number of backend service failures during API invocations with a response code greater or equal to 300 and classifies the failures by its response code with the label 3xx, 4xx, 5xx or connect. The connect reason means that the backend service cannot be reached, for example, due to network outages.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.server.component_error_count
+    metadata:
+      displayName: SAG - Server-Level - Component Error Count
+      description: Counts the number of exceptions that occur when interacting with components or destinations.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.server.exec_error_count
+    metadata:
+      displayName: SAG - Server-Level - Exec Error Count
+      description: Counts the number of API invocations that fail due to an unexpected error (for example NPE) and provides an aggregated number.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.server.avg_response_time
+    metadata:
+      displayName: SAG - Server-Level - Average Response Time
+      description: Measures the average time spent by all API invocations, classified by its response code with the label 2xx, 3xx, 4xx or 5xx. This includes the time spent in API Gateway and by the backend services
+      unit: MilliSecond
+  - key: com.dynatrace.extension.prometheus-sag.server.avg_latency
+    metadata:
+      displayName: SAG - Server-Level - Average Latency
+      description: Measures the average time spent by all API invocations, which does not include the time spent in backend services, classified by its response code with the label 2xx, 3xx, 4xx or 5xx.
+      unit: MilliSecond
+  - key: com.dynatrace.extension.prometheus-sag.api.apicalls_total
+    metadata:
+      displayName: SAG - Host-Level - Adapter Count
+      description: The number of adapter packages loaded on Microservices Runtime
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.average_connection_time
+    metadata:
+      displayName: SAG - Host-Level - Average Connection Time
+      description: The running average for the connection time expressed in milliseconds. This can also be described as the average session time or how long a connection is kept alive.
+      unit: MilliSecond
+  - key: com.dynatrace.extension.prometheus-sag.host.avg_time_per_http_requests
+    metadata:
+      displayName: SAG - Host-Level - Average HTTP runtime
+      description: The running average time for all HTTP/S requests measured in milliseconds, This metric excludes requests for services in packages listed in the watt.server.stats.packages.exclude parameter.
+      unit: MilliSecond
+  - key: com.dynatrace.extension.prometheus-sag.host.cloudstream
+    metadata:
+      displayName: SAG - Host-Level - Cloudstream Count
+      description: The number of loaded CloudStreams connectors on Microservices Runtime.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.current_stateful_sessions
+    metadata:
+      displayName: SAG - Host-Level - Current Stateful Sessions
+      description: The current number of stateful sessions.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.custom_package
+    metadata:
+      displayName: SAG - Host-Level - Custom Package Count
+      description: The number of custom packages loaded on Microservices Runtime. A package is considered a custom package if the package manifest contains system_package=no.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.free_memory_bytes
+    metadata:
+      displayName: SAG - Host-Level - Free Memory Bytes
+      description: The total free memory for the Microservices Runtime JVM.
+      unit: Byte
+  - key: com.dynatrace.extension.prometheus-sag.host.http_requests
+    metadata:
+      displayName: SAG - Host-Level - Http Requests
+      description: The total number of HTTP/S requests since the last statistics poll. The statistics poll interval is controlled by the watt.server.stats.pollTime server configuration parameter. The default interval is 60 seconds. This metric excludes requests for services in packages listed in the watt.server.stats.packages.exclude parameter.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.max_connections_count
+    metadata:
+      displayName: SAG - Host-Level - Max Connections
+      description: The peak number of connections to Microservices Runtime the connection is a session which can be created multiple ways such as through an HTTP connection, a trigger, the scheduler, etc.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.max_memory_bytes_count
+    metadata:
+      displayName: SAG - Host-Level - Max Memory Bytes
+      description: TThe maximum memory of the Microservices Runtime JVM.
+      unit: Byte
+  - key: com.dynatrace.extension.prometheus-sag.host.max_number_sessions_allowed
+    metadata:
+      displayName: SAG - Host-Level - Max Sessions Allowed
+      description: The maximum number of sessions allowed at one time as determined by the license.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.max_services_count
+    metadata:
+      displayName: SAG - Host-Level - Max Services
+      description: The maximum number of services that have run concurrently on the server excluding services in a package set in the watt.sever.stats.packages.exclude parameter.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.max_system_threads_count
+    metadata:
+      displayName: SAG - Host-Level - Max system Threads
+      description: The peak number of system threads used by Microservices Runtime since startup.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.number_current_connections
+    metadata:
+      displayName: SAG - Host-Level - Current Connections
+      description: The number of current connections to the Microservices Runtime where the connection is a session which can be created multiple ways such as through an HTTP connection, a trigger, the scheduler, etc.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.number_nonservice_errors_count
+    metadata:
+      displayName: SAG - Host-Level - Nonservice Errors
+      description: The number of errors that were caused by exceptions that are not ServiceExceptions. This is the same value returned by sag_is_number_unknown_errors.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.number_service_errors_count
+    metadata:
+      displayName: SAG - Host-Level - Service Errors
+      description: The number of service errors since startup, which includes any service that gets an exception of any kind.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.number_service_errors_excluding_internal_svc_per_minute
+    metadata:
+      displayName: SAG - Host-Level - Number of service errors in the last minute with excludes
+      description: The number of service errors in the last minute, which includes any service that gets an exception of any kind but excludes any services in a package set in the watt.sever.stats.packages.exclude server configuration parameter.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.number_service_errors_per_minute
+    metadata:
+      displayName: SAG - Host-Level - Number of service errors in the last minute 
+      description: The number of service errors in the last minute.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.number_service_invokes_count
+    metadata:
+      displayName: SAG - Host-Level - Number of Successful service invokes
+      description: The number of successful service invokes and service errors since Microservices Runtime startup. This metric excludes services in a package set in the watt.sever.stats.packages.exclude parameter.
+      unit: Count
 
-#   - key: com.dynatrace.extension.prometheus-sag.host.number_sessions_used
-#     metadata:
-#       displayName: SAG - Host-Level - Number of Sessions Used
-#       description: The number of sessions used since Microservices Runtime startup.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.number_unknown_errors
-#     metadata:
-#       displayName: SAG - Host-Level - Unknown Error Count
-#       description: The number of errors that were caused by exceptions that are not ServiceExceptions. This is the same value returned by sag_is_number_nonservice_errors.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.peak_number_sessions_count
-#     metadata:
-#       displayName: SAG - Host-Level - Peak Number Sessions
-#       description: The peak number of sessions since Microservices Runtime startup.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.peak_service_threads_count
-#     metadata:
-#       displayName: SAG - Host-Level - Peak Number Threads
-#       description: The peak number of threads used by the server since Microservices Runtime startup.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.peak_stateful_sessions
-#     metadata:
-#       displayName: SAG - Host-Level - Peak Stateful Sessions
-#       description: The peak number of stateful sessions since Microservices Runtime startup.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.request_duration
-#     metadata:
-#       displayName: SAG - Host-Level - Request Duration
-#       description: The total duration in milliseconds for all service requests over the last interval where the interval length is determined by the value of the watt.server.stats.pollTime server configuration parameter. This metric excludes services in a package set in the watt.sever.stats.packages.exclude parameter.
-#       unit: MilliSecond
-#   - key: com.dynatrace.extension.prometheus-sag.host.server_jvm_thread
-#     metadata:
-#       displayName: SAG - Host-Level - JVM Thread Count
-#       description: Number of threads running in the Microservices Runtime JVM.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.server_hybrid_sessions_count
-#     metadata:
-#       displayName: SAG - Host-Level - Hybrid Sessions Count
-#       description: The cumulative count of hybrid sessions created for all accounts since the server startup. The same metrics show the cumulative count of hybrid sessions created for an account since the server startup with details, such as tenant, account, and stage.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.server_maxthreads
-#     metadata:
-#       displayName: SAG - Host-Level - Max Threads
-#       description: The maximum number of server threads in the server thread pool.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.server_open_files
-#     metadata:
-#       displayName: SAG - Host-Level - Open Files Count
-#       description: Total open file descriptors. Returned only for UNIX\Linux operating systems.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.server_proc_cpu_percent
-#     metadata:
-#       displayName: SAG - Host-Level - CPU Used JVM
-#       description: Percentage of the CPU used for the Microservices Runtime JVM.
-#       unit: Percent
-#   - key: com.dynatrace.extension.prometheus-sag.host.server_proc_sys_percent
-#     metadata:
-#       displayName: SAG - Host-Level - CPU Used by OS
-#       description: Percentage of the CPU used by the Operating System.
-#       unit: Percent
-#   - key: com.dynatrace.extension.prometheus-sag.host.server_session_licensed
-#     metadata:
-#       displayName: SAG - Host-Level - Licensed Session Count
-#       description: Number of active licensed Microservices Runtime sessions. (Administrator sessions are not included in this count.)
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.server_session_stateful
-#     metadata:
-#       displayName: SAG - Host-Level - Stateful Session Count
-#       description: Number of active stateful sessions.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.server_session_stateless
-#     metadata:
-#       displayName: SAG - Host-Level - Stateless Session Count
-#       description: Number of active stateful sessions.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.server_startup_Time_count
-#     metadata:
-#       displayName: SAG - Host-Level - Stateless Session Count
-#       description: The time at which Microservices Runtime started up.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.server_sysload_average
-#     metadata:
-#       displayName: SAG - Host-Level - Average Sysload Threads
-#       description: Number of Microservices Runtime server threads waiting for CPU resources. Returned only for UNIX\Linux operating systems.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.server_threads
-#     metadata:
-#       displayName: SAG - Host-Level - Threads used
-#       description: The number of server threads from the server thread pool currently in use.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.server_total_disk_mbytes
-#     metadata:
-#       displayName: SAG - Host-Level - Available Disk Space
-#       description: Total available disk space measured in megabytes on the disk where Microservices Runtime is installed.
-#       unit: MegaByte
-#   - key: com.dynatrace.extension.prometheus-sag.host.server_total_memory_mbytes
-#     metadata:
-#       displayName: SAG - Host-Level - Memory
-#       description: Total amount of physical memory available on the machine on which Microservices Runtime is installed measured in megabytes.
-#       unit: MegaByte
-#   - key: com.dynatrace.extension.prometheus-sag.host.server_used_disk_mbytes
-#     metadata:
-#       displayName: SAG - Host-Level - Used Disk Space
-#       description: Used disk space measured in megabytes on the disk where Microservices Runtime is installed.
-#       unit: MegaByte
-#   - key: com.dynatrace.extension.prometheus-sag.host.server_used_memory_mbytes
-#     metadata:
-#       displayName: SAG - Host-Level - Used Memory
-#       description: Total amount of physical memory used on the machine on which Microservices Runtime is installed measured in megabytes measured in megabytes.
-#       unit: MegaByte
-#   - key: com.dynatrace.extension.prometheus-sag.host.service_completions_per_minute
-#     metadata:
-#       displayName: SAG - Host-Level - Service Completions per minute
-#       description: The number of top-level service completions per minute.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.service
-#     metadata:
-#       displayName: SAG - Host-Level - Service Count
-#       description: The number of services in custom packages loaded on Microservices Runtime. A package is considered a custom package if the package manifest contains system_package=no.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.service_starts_per_minute
-#     metadata:
-#       displayName: SAG - Host-Level - Service Start per minute
-#       description: The number of top-level services started each minute.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.service_threads
-#     metadata:
-#       displayName: SAG - Host-Level - Service Threads
-#       description: The total number of threads used for service execution where the threads are obtained from the server thread pool.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.services
-#     metadata:
-#       displayName: SAG - Host-Level - Service Count
-#       description: The total number of running services currently active excluding services in a package set in the watt.sever.stats.packages.exclude parameter.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.stateful_sessions_limit_count
-#     metadata:
-#       displayName: SAG - Host-Level - Max Number of Stateful Sessions
-#       description: The maximum number of stateful sessions. If watt.server.session.stateful.max is set to 0 or watt.server.session.stateful.enableLimit is set to false, this is the maximum number of sessions as specified in the license.If watt.server.session.stateful.max is not 0 and watt.server.session.stateful.enableLimit is set to true, then this is the value of watt.server.session.stateful.max.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.system_threads
-#     metadata:
-#       displayName: SAG - Host-Level - System threads
-#       description: The total number of Java system threads which is any thread not obtained from the server thread pool.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.total_http_requests_count
-#     metadata:
-#       displayName: SAG - Host-Level - Total HTTP Requests
-#       description: The total number of HTTP/S requests since Microservices Runtime startup. This metric excludes requests for services in packages listed in the watt.server.stats.packages.exclude parameter.
-#       unit: Count
-#   - key: com.dynatrace.extension.prometheus-sag.host.total_memory_bytes_count
-#     metadata:
-#       displayName: SAG - Host-Level - Total Memory
-#       description: The total memory for the Microservices Runtime JVM.
-#       unit: Byte
-#   - key: com.dynatrace.extension.prometheus-sag.host.total_request_durations_count
-#     metadata:
-#       displayName: SAG - Host-Level - Total Request Durations
-#       description: The total duration, in milliseconds, for all service requests since Microservices Runtime startup measured in milliseconds. This metric excludes services in a package set in the watt.sever.stats.packages.exclude parameter.
-#       unit: MilliSecond
-#   - key: com.dynatrace.extension.prometheus-sag.host.used_memory_bytes
-#     metadata:
-#       displayName: SAG - Host-Level - Total Used Memory Bytes
-#       description: The total used memory for the Microservices Runtime JVM.
-#       unit: MilliSecond
+  - key: com.dynatrace.extension.prometheus-sag.host.number_sessions_used
+    metadata:
+      displayName: SAG - Host-Level - Number of Sessions Used
+      description: The number of sessions used since Microservices Runtime startup.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.number_unknown_errors
+    metadata:
+      displayName: SAG - Host-Level - Unknown Error Count
+      description: The number of errors that were caused by exceptions that are not ServiceExceptions. This is the same value returned by sag_is_number_nonservice_errors.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.peak_number_sessions_count
+    metadata:
+      displayName: SAG - Host-Level - Peak Number Sessions
+      description: The peak number of sessions since Microservices Runtime startup.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.peak_service_threads_count
+    metadata:
+      displayName: SAG - Host-Level - Peak Number Threads
+      description: The peak number of threads used by the server since Microservices Runtime startup.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.peak_stateful_sessions
+    metadata:
+      displayName: SAG - Host-Level - Peak Stateful Sessions
+      description: The peak number of stateful sessions since Microservices Runtime startup.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.request_duration
+    metadata:
+      displayName: SAG - Host-Level - Request Duration
+      description: The total duration in milliseconds for all service requests over the last interval where the interval length is determined by the value of the watt.server.stats.pollTime server configuration parameter. This metric excludes services in a package set in the watt.sever.stats.packages.exclude parameter.
+      unit: MilliSecond
+  - key: com.dynatrace.extension.prometheus-sag.host.server_jvm_thread
+    metadata:
+      displayName: SAG - Host-Level - JVM Thread Count
+      description: Number of threads running in the Microservices Runtime JVM.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.server_hybrid_sessions_count
+    metadata:
+      displayName: SAG - Host-Level - Hybrid Sessions Count
+      description: The cumulative count of hybrid sessions created for all accounts since the server startup. The same metrics show the cumulative count of hybrid sessions created for an account since the server startup with details, such as tenant, account, and stage.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.server_maxthreads
+    metadata:
+      displayName: SAG - Host-Level - Max Threads
+      description: The maximum number of server threads in the server thread pool.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.server_open_files
+    metadata:
+      displayName: SAG - Host-Level - Open Files Count
+      description: Total open file descriptors. Returned only for UNIX\Linux operating systems.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.server_proc_cpu_percent
+    metadata:
+      displayName: SAG - Host-Level - CPU Used JVM
+      description: Percentage of the CPU used for the Microservices Runtime JVM.
+      unit: Percent
+  - key: com.dynatrace.extension.prometheus-sag.host.server_proc_sys_percent
+    metadata:
+      displayName: SAG - Host-Level - CPU Used by OS
+      description: Percentage of the CPU used by the Operating System.
+      unit: Percent
+  - key: com.dynatrace.extension.prometheus-sag.host.server_session_licensed
+    metadata:
+      displayName: SAG - Host-Level - Licensed Session Count
+      description: Number of active licensed Microservices Runtime sessions. (Administrator sessions are not included in this count.)
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.server_session_stateful
+    metadata:
+      displayName: SAG - Host-Level - Stateful Session Count
+      description: Number of active stateful sessions.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.server_session_stateless
+    metadata:
+      displayName: SAG - Host-Level - Stateless Session Count
+      description: Number of active stateful sessions.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.server_startup_Time_count
+    metadata:
+      displayName: SAG - Host-Level - Stateless Session Count
+      description: The time at which Microservices Runtime started up.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.server_sysload_average
+    metadata:
+      displayName: SAG - Host-Level - Average Sysload Threads
+      description: Number of Microservices Runtime server threads waiting for CPU resources. Returned only for UNIX\Linux operating systems.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.server_threads
+    metadata:
+      displayName: SAG - Host-Level - Threads used
+      description: The number of server threads from the server thread pool currently in use.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.server_total_disk_mbytes
+    metadata:
+      displayName: SAG - Host-Level - Available Disk Space
+      description: Total available disk space measured in megabytes on the disk where Microservices Runtime is installed.
+      unit: MegaByte
+  - key: com.dynatrace.extension.prometheus-sag.host.server_total_memory_mbytes
+    metadata:
+      displayName: SAG - Host-Level - Memory
+      description: Total amount of physical memory available on the machine on which Microservices Runtime is installed measured in megabytes.
+      unit: MegaByte
+  - key: com.dynatrace.extension.prometheus-sag.host.server_used_disk_mbytes
+    metadata:
+      displayName: SAG - Host-Level - Used Disk Space
+      description: Used disk space measured in megabytes on the disk where Microservices Runtime is installed.
+      unit: MegaByte
+  - key: com.dynatrace.extension.prometheus-sag.host.server_used_memory_mbytes
+    metadata:
+      displayName: SAG - Host-Level - Used Memory
+      description: Total amount of physical memory used on the machine on which Microservices Runtime is installed measured in megabytes measured in megabytes.
+      unit: MegaByte
+  - key: com.dynatrace.extension.prometheus-sag.host.service_completions_per_minute
+    metadata:
+      displayName: SAG - Host-Level - Service Completions per minute
+      description: The number of top-level service completions per minute.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.service
+    metadata:
+      displayName: SAG - Host-Level - Service Count
+      description: The number of services in custom packages loaded on Microservices Runtime. A package is considered a custom package if the package manifest contains system_package=no.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.service_starts_per_minute
+    metadata:
+      displayName: SAG - Host-Level - Service Start per minute
+      description: The number of top-level services started each minute.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.service_threads
+    metadata:
+      displayName: SAG - Host-Level - Service Threads
+      description: The total number of threads used for service execution where the threads are obtained from the server thread pool.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.services
+    metadata:
+      displayName: SAG - Host-Level - Service Count
+      description: The total number of running services currently active excluding services in a package set in the watt.sever.stats.packages.exclude parameter.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.stateful_sessions_limit_count
+    metadata:
+      displayName: SAG - Host-Level - Max Number of Stateful Sessions
+      description: The maximum number of stateful sessions. If watt.server.session.stateful.max is set to 0 or watt.server.session.stateful.enableLimit is set to false, this is the maximum number of sessions as specified in the license.If watt.server.session.stateful.max is not 0 and watt.server.session.stateful.enableLimit is set to true, then this is the value of watt.server.session.stateful.max.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.system_threads
+    metadata:
+      displayName: SAG - Host-Level - System threads
+      description: The total number of Java system threads which is any thread not obtained from the server thread pool.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.total_http_requests_count
+    metadata:
+      displayName: SAG - Host-Level - Total HTTP Requests
+      description: The total number of HTTP/S requests since Microservices Runtime startup. This metric excludes requests for services in packages listed in the watt.server.stats.packages.exclude parameter.
+      unit: Count
+  - key: com.dynatrace.extension.prometheus-sag.host.total_memory_bytes_count
+    metadata:
+      displayName: SAG - Host-Level - Total Memory
+      description: The total memory for the Microservices Runtime JVM.
+      unit: Byte
+  - key: com.dynatrace.extension.prometheus-sag.host.total_request_durations_count
+    metadata:
+      displayName: SAG - Host-Level - Total Request Durations
+      description: The total duration, in milliseconds, for all service requests since Microservices Runtime startup measured in milliseconds. This metric excludes services in a package set in the watt.sever.stats.packages.exclude parameter.
+      unit: MilliSecond
+  - key: com.dynatrace.extension.prometheus-sag.host.used_memory_bytes
+    metadata:
+      displayName: SAG - Host-Level - Total Used Memory Bytes
+      description: The total used memory for the Microservices Runtime JVM.
+      unit: MilliSecond
 
 
 
@@ -345,268 +345,268 @@ prometheus:
     subgroups:
       - subgroup: API-Level Metrics
         metrics:
-#           - key: com.dynatrace.extension.prometheus-sag.api.exec_error_count
-#             value: metric:sag_apigw_api_exec_error_count 
-#             type: count
-#             featureSet: API-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.api.exec_error_count
+            value: metric:sag_apigw_api_exec_error_count 
+            type: count
+            featureSet: API-Level Metrics
           - key: com.dynatrace.extension.prometheus-sag.api.backend_error_count
             value: metric:sag_apigw_api_backend_error_count
             type: count
             featureSet: API-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.api.tx_error_count
-#             value: metric:sag_apigw_api_tx_error_count
-#             type: count
-#             featureSet: API-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.api.avg_latency
-#             value: metric:sag_apigw_api_avg_latency
-#             type: gauge
-#             featureSet: API-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.api.avg_backend_response_time
-#             value: metric:sag_apigw_api_avg_backend_response_time
-#             type: gauge
-#             featureSet: API-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.api.avg_response_time
-#             value: metric:sag_apigw_api_avg_response_time
-#             type: gauge
-#             featureSet: API-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.api.apicalls_total_count
-#             value: metric:sag_apigw_apicalls_total
-#             type: count
-#             featureSet: API-Level Metrics
-#       - subgroup: Server-Level Metrics
-#         metrics: 
-#           - key: com.dynatrace.extension.prometheus-sag.server.tx_error_count
-#             value: metric:sag_apigw_tx_error_count
-#             type: count
-#             featureSet: Server-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.server.backend_error_count
-#             value: metric:sag_apigw_backend_error_count
-#             type: count
-#             featureSet: Server-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.server.component_error_count
-#             value: metric:sag_apigw_component_error_count
-#             type: count
-#             featureSet: Server-Level Metrics
-#           - key:  com.dynatrace.extension.prometheus-sag.server.exec_error_count
-#             value: metric:sag_apigw_exec_error_count
-#             type: count
-#             featureSet: Server-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.server.avg_response_time
-#             value: metric:sag_apigw_avg_response_time
-#             type: gauge
-#             featureSet: Server-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.server.avg_latency
-#             value: metric:sag_apigw_avg_latency
-#             type: gauge
-#             featureSet: Server-Level Metrics
-#       - subgroup: Host-Level Metrics
-#         metrics: 
-#           - key: com.dynatrace.extension.prometheus-sag.api.apicalls_total
-#             value: metric:sag_is_adapter_count
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.average_connection_time
-#             value: metric:sag_is_average_connection_time
-#             type: gauge
-#             featureSet: Host-Level Metrics         
-#           - key: com.dynatrace.extension.prometheus-sag.host.avg_time_per_http_requests
-#             value: metric:sag_is_avg_time_per_http_requests
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.cloudstream
-#             value: metric:sag_is_cloudstream_count
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.current_stateful_sessions
-#             value: metric:sag_is_current_stateful_sessions
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.custom_package
-#             value: metric:sag_is_custom_package_count
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.free_memory_bytes
-#             value: metric:sag_is_free_memory_bytes
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.http_requests
-#             value: metric:sag_is_http_requests
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.max_connections_count
-#             value: metric:sag_is_max_connections
-#             type: count
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.max_memory_bytes_count
-#             value: metric:sag_is_max_memory_bytes
-#             type: count
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.max_number_sessions_allowed
-#             value: metric:sag_is_max_number_sessions_allowed
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.max_services_count
-#             value: metric:sag_is_max_services
-#             type: count
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.max_system_threads_count
-#             value: metric:sag_is_max_system_threads
-#             type: count
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.number_current_connections
-#             value: metric:sag_is_number_current_connections
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.number_nonservice_errors_count
-#             value: metric:sag_is_number_nonservice_errors
-#             type: count
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.number_service_errors_count
-#             value: metric:sag_is_number_service_errors
-#             type: count
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.number_service_errors_excluding_internal_svc_per_minute
-#             value: metric:sag_is_number_service_errors_excluding_internal_svc_per_minute
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.number_service_errors_per_minute
-#             value: metric:sag_is_number_service_errors_per_minute
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.number_service_invokes_count
-#             value: metric:sag_is_number_service_invokes
-#             type: count
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.number_sessions_used
-#             value: metric:sag_is_number_sessions_used
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.number_unknown_errors
-#             value: metric:sag_is_number_unknown_errors
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.peak_number_sessions_count
-#             value: metric:sag_is_peak_number_sessions
-#             type: count
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.peak_service_threads_count
-#             value: metric:sag_is_peak_service_threads
-#             type: count
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.peak_stateful_sessions
-#             value: metric:sag_is_peak_stateful_sessions
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.request_duration
-#             value: metric:sag_is_request_duration
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.server_jvm_thread
-#             value: metric:sag_is_server_jvm_thread_count
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.server_hybrid_sessions_count
-#             value: metric:sag_is_server_hybrid_sessions
-#             type: count
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.server_maxthreads
-#             value: metric:sag_is_server_maxthreads
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.server_open_files
-#             value: metric:sag_is_server_open_files_count
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.server_proc_cpu_percent
-#             value: metric:sag_is_server_proc_cpu_percent
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.server_proc_sys_percent
-#             value: metric:sag_is_server_proc_sys_percent
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.server_session_licensed
-#             value: metric:sag_is_server_session_licensed_count
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.server_session_stateless
-#             value: metric:sag_is_server_session_stateless_count
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.server_session_stateful
-#             value: metric:sag_is_server_session_stateful_count
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.server_startup_Time_count
-#             value: metric:sag_is_server_startup_Time
-#             type: count
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.server_sysload_average
-#             value: metric:sag_is_server_sysload_average
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.server_threads
-#             value: metric:sag_is_server_threads
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.server_total_disk_mbytes
-#             value: metric:sag_is_server_total_disk_mbytes
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.server_total_memory_mbytes
-#             value: metric:sag_is_server_total_memory_mbytes
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.server_used_disk_mbytes
-#             value: metric:sag_is_server_used_disk_mbytes
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.server_used_memory_mbytes
-#             value: metric:sag_is_server_used_memory_mbytes
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.service_completions_per_minute
-#             value: metric:sag_is_service_completions_per_minute
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.service
-#             value: metric:sag_is_service_count
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.service_starts_per_minute
-#             value: metric:sag_is_service_starts_per_minute
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.service_threads
-#             value: metric:sag_is_service_threads
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.services
-#             value: metric:sag_is_services
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.stateful_sessions_limit_count
-#             value: metric:sag_is_stateful_sessions_limit
-#             type: count
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.system_threads
-#             value: metric:sag_is_system_threadsƒ
-#             type: gauge
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.total_http_requests_count
-#             value: metric:sag_is_total_http_requests
-#             type: count
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.total_memory_bytes_count
-#             value: metric:sag_is_total_memory_bytes
-#             type: count
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.total_request_durations_count
-#             value: metric:sag_is_total_request_durations
-#             type: count
-#             featureSet: Host-Level Metrics
-#           - key: com.dynatrace.extension.prometheus-sag.host.used_memory_bytes
-#             value: metric:sag_is_used_memory_bytes
-#             type: gauge
-#             featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.api.tx_error_count
+            value: metric:sag_apigw_api_tx_error_count
+            type: count
+            featureSet: API-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.api.avg_latency
+            value: metric:sag_apigw_api_avg_latency
+            type: gauge
+            featureSet: API-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.api.avg_backend_response_time
+            value: metric:sag_apigw_api_avg_backend_response_time
+            type: gauge
+            featureSet: API-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.api.avg_response_time
+            value: metric:sag_apigw_api_avg_response_time
+            type: gauge
+            featureSet: API-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.api.apicalls_total_count
+            value: metric:sag_apigw_apicalls_total
+            type: count
+            featureSet: API-Level Metrics
+      - subgroup: Server-Level Metrics
+        metrics: 
+          - key: com.dynatrace.extension.prometheus-sag.server.tx_error_count
+            value: metric:sag_apigw_tx_error_count
+            type: count
+            featureSet: Server-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.server.backend_error_count
+            value: metric:sag_apigw_backend_error_count
+            type: count
+            featureSet: Server-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.server.component_error_count
+            value: metric:sag_apigw_component_error_count
+            type: count
+            featureSet: Server-Level Metrics
+          - key:  com.dynatrace.extension.prometheus-sag.server.exec_error_count
+            value: metric:sag_apigw_exec_error_count
+            type: count
+            featureSet: Server-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.server.avg_response_time
+            value: metric:sag_apigw_avg_response_time
+            type: gauge
+            featureSet: Server-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.server.avg_latency
+            value: metric:sag_apigw_avg_latency
+            type: gauge
+            featureSet: Server-Level Metrics
+      - subgroup: Host-Level Metrics
+        metrics: 
+          - key: com.dynatrace.extension.prometheus-sag.api.apicalls_total
+            value: metric:sag_is_adapter_count
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.average_connection_time
+            value: metric:sag_is_average_connection_time
+            type: gauge
+            featureSet: Host-Level Metrics         
+          - key: com.dynatrace.extension.prometheus-sag.host.avg_time_per_http_requests
+            value: metric:sag_is_avg_time_per_http_requests
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.cloudstream
+            value: metric:sag_is_cloudstream_count
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.current_stateful_sessions
+            value: metric:sag_is_current_stateful_sessions
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.custom_package
+            value: metric:sag_is_custom_package_count
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.free_memory_bytes
+            value: metric:sag_is_free_memory_bytes
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.http_requests
+            value: metric:sag_is_http_requests
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.max_connections_count
+            value: metric:sag_is_max_connections
+            type: count
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.max_memory_bytes_count
+            value: metric:sag_is_max_memory_bytes
+            type: count
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.max_number_sessions_allowed
+            value: metric:sag_is_max_number_sessions_allowed
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.max_services_count
+            value: metric:sag_is_max_services
+            type: count
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.max_system_threads_count
+            value: metric:sag_is_max_system_threads
+            type: count
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.number_current_connections
+            value: metric:sag_is_number_current_connections
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.number_nonservice_errors_count
+            value: metric:sag_is_number_nonservice_errors
+            type: count
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.number_service_errors_count
+            value: metric:sag_is_number_service_errors
+            type: count
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.number_service_errors_excluding_internal_svc_per_minute
+            value: metric:sag_is_number_service_errors_excluding_internal_svc_per_minute
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.number_service_errors_per_minute
+            value: metric:sag_is_number_service_errors_per_minute
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.number_service_invokes_count
+            value: metric:sag_is_number_service_invokes
+            type: count
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.number_sessions_used
+            value: metric:sag_is_number_sessions_used
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.number_unknown_errors
+            value: metric:sag_is_number_unknown_errors
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.peak_number_sessions_count
+            value: metric:sag_is_peak_number_sessions
+            type: count
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.peak_service_threads_count
+            value: metric:sag_is_peak_service_threads
+            type: count
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.peak_stateful_sessions
+            value: metric:sag_is_peak_stateful_sessions
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.request_duration
+            value: metric:sag_is_request_duration
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.server_jvm_thread
+            value: metric:sag_is_server_jvm_thread_count
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.server_hybrid_sessions_count
+            value: metric:sag_is_server_hybrid_sessions
+            type: count
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.server_maxthreads
+            value: metric:sag_is_server_maxthreads
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.server_open_files
+            value: metric:sag_is_server_open_files_count
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.server_proc_cpu_percent
+            value: metric:sag_is_server_proc_cpu_percent
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.server_proc_sys_percent
+            value: metric:sag_is_server_proc_sys_percent
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.server_session_licensed
+            value: metric:sag_is_server_session_licensed_count
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.server_session_stateless
+            value: metric:sag_is_server_session_stateless_count
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.server_session_stateful
+            value: metric:sag_is_server_session_stateful_count
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.server_startup_Time_count
+            value: metric:sag_is_server_startup_Time
+            type: count
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.server_sysload_average
+            value: metric:sag_is_server_sysload_average
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.server_threads
+            value: metric:sag_is_server_threads
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.server_total_disk_mbytes
+            value: metric:sag_is_server_total_disk_mbytes
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.server_total_memory_mbytes
+            value: metric:sag_is_server_total_memory_mbytes
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.server_used_disk_mbytes
+            value: metric:sag_is_server_used_disk_mbytes
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.server_used_memory_mbytes
+            value: metric:sag_is_server_used_memory_mbytes
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.service_completions_per_minute
+            value: metric:sag_is_service_completions_per_minute
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.service
+            value: metric:sag_is_service_count
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.service_starts_per_minute
+            value: metric:sag_is_service_starts_per_minute
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.service_threads
+            value: metric:sag_is_service_threads
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.services
+            value: metric:sag_is_services
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.stateful_sessions_limit_count
+            value: metric:sag_is_stateful_sessions_limit
+            type: count
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.system_threads
+            value: metric:sag_is_system_threadsƒ
+            type: gauge
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.total_http_requests_count
+            value: metric:sag_is_total_http_requests
+            type: count
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.total_memory_bytes_count
+            value: metric:sag_is_total_memory_bytes
+            type: count
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.total_request_durations_count
+            value: metric:sag_is_total_request_durations
+            type: count
+            featureSet: Host-Level Metrics
+          - key: com.dynatrace.extension.prometheus-sag.host.used_memory_bytes
+            value: metric:sag_is_used_memory_bytes
+            type: gauge
+            featureSet: Host-Level Metrics
                      
