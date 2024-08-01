@@ -4,6 +4,7 @@ minDynatraceVersion: "1.291.0"
 author:
   name: Evolane - Ynias
 
+
 metrics:
   - key: com.dynatrace.extension.prometheus-sag.api.exec_error_count
     metadata:
