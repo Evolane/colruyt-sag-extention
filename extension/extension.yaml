@@ -1,5 +1,5 @@
 name: custom:com.dynatrace.extention.prometheus-sag
-version: 0.0.7
+version: 0.0.8
 minDynatraceVersion: "1.291.0"
 author:
   name: Evolane - Ynias

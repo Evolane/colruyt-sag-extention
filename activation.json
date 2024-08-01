@@ -1,0 +1,24 @@
+{
+	"value": {
+		"enabled": true,
+		"description": "",
+		"version": "0.0.8",
+		"featureSets": [
+			"Server-Level Metrics",
+			"API-Level Metrics",
+			"Host-Level Metrics"
+		],
+		"activationContext": "REMOTE",
+		"prometheusRemote": {
+			"endpoints": [
+				{
+					"url": "https://www.vandegaer.com/metrics/metrics",
+					"authentication": {
+						"scheme": "none",
+						"skipVerifyHttps": false
+					}
+				}
+			]
+		}
+	}
+}
